@@ -338,20 +338,93 @@ location / {
 
 ---
 
+---
+
+## Баг-фикс: Навигационные ссылки не учитывают языковой префикс
+
+### Проблема
+При нахождении на `/ru/students/` или `/zh/services/` ссылки навигации в хедере ведут на `/services`, `/students` и т.д. — **без языкового префикса**. Это приводит к потере языкового контекста при переходе между страницами.
+
+**Корневая причина** (`docs/assets/shared.js`, строка 383-394):
+- `updateNavLinks(lang)` вызывается **только** когда `lang !== 'ru'`
+- Для русского языка ссылки остаются как `/services` вместо `/ru/services/`
+- Даже для не-ru языков: при переходе по ссылке без префикса — Cloudflare Pages отдаёт страницу, но `detectLang()` возвращает `'ru'` (нет префикса в URL), и переводы не применяются
+
+### Решение
+**Всегда** добавлять языковой префикс ко всем навигационным ссылкам, включая `ru`.
+
+#### Изменение 1: `docs/assets/shared.js` — вызывать `updateNavLinks` всегда
+```js
+// Строки 383-395 — I18N INIT
+(function(){
+    var lang=detectLang();
+    updateNavLinks(lang);  // ← ВСЕГДА, а не только для не-ru
+    if(lang!=='ru'){
+        loadAndApplyLang(lang);
+    }else{
+        // ... typed init для русского
+    }
+})();
+```
+
+#### Изменение 2: `docs/assets/shared.js` — updateNavLinks добавляет trailing slash
+```js
+function updateNavLinks(lang){
+    var prefix='/'+lang;
+    document.querySelectorAll('.nav-tab[href]').forEach(function(a){
+        var href=a.getAttribute('data-href')||a.getAttribute('href');
+        if(!a.getAttribute('data-href'))a.setAttribute('data-href',href);
+        var newHref=prefix+href;
+        if(newHref.length>1&&!newHref.endsWith('/'))newHref+='/';
+        a.setAttribute('href',newHref);
+    });
+    // Обновить логотип тоже
+    var logo=document.querySelector('.logo[href]');
+    if(logo){
+        var logoHref=prefix+'/';
+        logo.setAttribute('href',logoHref);
+    }
+}
+```
+
+#### Изменение 3: Пересобрать языковые копии
+```bash
+bash scripts/gen-lang-pages.sh
+```
+
+### Критические файлы
+| Файл | Изменение |
+|------|-----------|
+| `docs/assets/shared.js` | Вызывать `updateNavLinks(lang)` всегда + trailing slash + логотип |
+
+### Верификация
+1. Открыть `logic-architecture.pages.dev/zh/students/`
+2. Кликнуть «服务» (Услуги) в навигации → должен перейти на `/zh/services/`
+3. Переключить язык на RU → `/ru/services/`
+4. Кликнуть «Студентам» → `/ru/students/`
+5. Переключить на EN → `/en/students/`
+6. Кликнуть логотип → `/en/`
+7. Проверить мобильное меню: гамбургер → все ссылки с языковым префиксом
+
+---
+
 ## Порядок выполнения
 
-1. Извлечь CSS → `docs/assets/style.css`
-2. Извлечь JS → `docs/assets/shared.js` (с модификацией i18n)
-3. Создать `docs/assets/layout.js`
-4. Создать страницы (services, students, tech, investors, about, join)
-5. Рефакторинг `docs/index.html` (только главная)
-6. Создать систему публикаций (publications/index.html, publications.json, стили)
-7. Создать `scripts/publish.sh`
-8. Конвертировать `examples/` → публикации через скрипт
-9. Создать 404.html
-10. Создать sitemap.xml
-11. Обновить `docs/_redirects`
-12. Обновить `docker/nginx/default.conf`
-13. Обновить i18n JSON-файлы (новые ключи)
-14. Тестирование на Cloudflare Pages (тестовый стенд)
-15. Деплой на VPS (прод)
+1. ~~Извлечь CSS → `docs/assets/style.css`~~ ✅
+2. ~~Извлечь JS → `docs/assets/shared.js`~~ ✅
+3. ~~Создать `docs/assets/layout.js`~~ ✅
+4. ~~Создать страницы~~ ✅
+5. ~~Рефакторинг `docs/index.html`~~ ✅
+6. ~~Создать систему публикаций~~ ✅
+7. ~~Создать `scripts/publish.sh`~~ ✅
+8. ~~Конвертировать `examples/` → публикации~~ ✅
+9. ~~Создать 404.html~~ ✅
+10. ~~Создать sitemap.xml~~ ✅
+11. ~~Обновить `docs/_redirects`~~ ✅
+12. ~~Обновить `docker/nginx/default.conf`~~ ✅
+13. ~~Обновить i18n JSON-файлы~~ ✅
+14. ~~Языковые директории (физические копии для Cloudflare)~~ ✅
+15. ~~Trailing slash в setLang~~ ✅
+16. **→ Навигационные ссылки с языковым префиксом** ← ТЕКУЩИЙ
+17. Тестирование на Cloudflare Pages
+18. Деплой на VPS (прод)

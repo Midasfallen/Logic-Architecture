@@ -339,11 +339,16 @@ function reinitTyped(lang,dict){
 
 // ===== NAV LANG LINKS =====
 function updateNavLinks(lang){
+    var prefix='/'+lang;
     document.querySelectorAll('.nav-tab[href]').forEach(function(a){
         var href=a.getAttribute('data-href')||a.getAttribute('href');
         if(!a.getAttribute('data-href'))a.setAttribute('data-href',href);
-        a.setAttribute('href',lang==='ru'?href:'/'+lang+href);
+        var newHref=prefix+href;
+        if(newHref.length>1&&!newHref.endsWith('/'))newHref+='/';
+        a.setAttribute('href',newHref);
     });
+    var logo=document.querySelector('.logo[href]');
+    if(logo){logo.setAttribute('href',prefix+'/')}
 }
 
 // ===== FORM HELPERS =====
@@ -383,9 +388,9 @@ if(typeof AOS!=='undefined')AOS.init({duration:600,once:true,offset:80});
 // ===== I18N INIT =====
 (function(){
     var lang=detectLang();
+    updateNavLinks(lang);
     if(lang!=='ru'){
         loadAndApplyLang(lang);
-        updateNavLinks(lang);
     }else{
         var el=document.getElementById('typed-target');
         if(el&&typeof Typed!=='undefined'){
