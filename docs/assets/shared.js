@@ -289,6 +289,8 @@ function setLang(lang){
     localStorage.setItem('la_lang',lang);
     var pagePath=getPagePath();
     var newPath='/'+lang+pagePath;
+    // Ensure trailing slash for Cloudflare Pages compatibility
+    if(newPath.length>1&&!newPath.endsWith('/'))newPath+='/';
     window.location.href=newPath;
 }
 
