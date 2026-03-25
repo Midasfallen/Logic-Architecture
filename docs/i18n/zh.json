@@ -284,5 +284,16 @@
   "toast.sending": "发送中...",
   "toast.success": "请求已发送！我们将通过安全渠道与您联系",
   "toast.error": "发送失败。请直接通过Telegram联系我们",
-  "typed.strings": ["数字产品", "营销策略", "网络服务", "移动应用", "技术文档"]
+  "typed.strings": ["数字产品", "营销策略", "网络服务", "移动应用", "技术文档"],
+  "nav.publications": "出版物",
+  "pub.sh.l": "出版物",
+  "pub.sh.t": "文章与研究",
+  "pub.sh.d": "科学论文、研究成果和已完成项目的示例",
+  "pub.filter.all": "全部",
+  "pub.filter.articles": "文章",
+  "pub.filter.coursework": "课程论文",
+  "pub.filter.research": "研究",
+  "404.title": "页面未找到",
+  "404.text": "请求的页面不存在或已被移动。返回首页继续浏览。",
+  "404.btn": "返回首页"
 }

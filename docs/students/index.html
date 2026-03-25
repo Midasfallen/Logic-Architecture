@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Помощь студентам — Logic Architecture</title>
+    <meta name="description" content="Помощь с подготовкой учебных работ: рефераты, курсовые, дипломы, магистерские, научные статьи">
+    <meta property="og:title" content="Помощь студентам — Logic Architecture">
+    <meta property="og:description" content="Помощь с подготовкой учебных работ: рефераты, курсовые, дипломы, магистерские, научные статьи">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/students">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/students">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="stu.sh.l">Студентам</div>
+        <h2 data-i18n="stu.sh.t">Помощь с подготовкой учебных работ</h2>
+        <p data-i18n="stu.sh.d">От подбора темы до успешной защиты. Конфиденциально и в срок</p>
+    </div>
+
+    <div class="biz-hero" data-aos="fade-up" style="background:linear-gradient(135deg,rgba(108,92,231,.04),rgba(79,125,245,.03))">
+        <h3 data-i18n="stu.hero.t">Знакомая ситуация?</h3>
+        <p data-i18n="stu.hero.d">Вы не одиноки — через это проходят тысячи студентов каждый семестр. Мы знаем, с чем вы сталкиваетесь, и знаем, как помочь.</p>
+    </div>
+
+    <div class="features" data-aos="fade-up" data-aos-delay="100">
+        <div class="feat">
+            <div class="feat-icon">🚫</div>
+            <h3 data-i18n="stu.p1.t">Антиплагиат не пропускает</h3>
+            <p data-i18n="stu.p1.d">Вы написали работу, а система показывает 15%. Знакомо? Поможем подготовить материал, который пройдёт проверку с первого раза</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🔄</div>
+            <h3 data-i18n="stu.p2.t">Преподаватель всё возвращает</h3>
+            <p data-i18n="stu.p2.d">Бесконечные замечания, переделки, новые требования. Мы учитываем методичку вашего вуза и требования научного руководителя</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">⏰</div>
+            <h3 data-i18n="stu.p3.t">Нет времени</h3>
+            <p data-i18n="stu.p3.d">Работа, семья, другие предметы — а дедлайн через неделю. Мы поможем разобраться, чтобы вы сосредоточились на том, что важнее</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">😰</div>
+            <h3 data-i18n="stu.p4.t">Боюсь, что не защитюсь</h3>
+            <p data-i18n="stu.p4.d">Сопровождаем до самой защиты. Бесплатные правки по замечаниям. Не бросаем после завершения консультации</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">📋</div>
+            <h3 data-i18n="stu.p5.t">Непонятные требования</h3>
+            <p data-i18n="stu.p5.d">ГОСТ, методичка, антиплагиат, оформление — мы разбираемся во всех тонкостях за вас</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🔒</div>
+            <h3 data-i18n="stu.p6.t">Переживаю за конфиденциальность</h3>
+            <p data-i18n="stu.p6.d">Полная анонимность. Никаких имён, никаких следов. Ваша безопасность — наш приоритет</p>
+        </div>
+    </div>
+
+    <div class="sh" style="margin-top:80px">
+        <div class="label" data-i18n="stu.pkg.l">Услуги</div>
+        <h2 data-i18n="stu.pkg.t">Выберите тип работы</h2>
+        <p data-i18n="stu.pkg.d">Бесплатно оценим сложность и сроки</p>
+    </div>
+
+    <div class="pkg-grid">
+        <div class="pkg">
+            <div class="pkg-icon">📝</div>
+            <span class="pkg-badge b1" data-i18n="stu.k1.badge">Быстро</span>
+            <h3 data-i18n="stu.k1.t">Рефераты и эссе</h3>
+            <p class="desc" data-i18n="stu.k1.d">Помощь с подготовкой рефератов, эссе, контрольных и докладов</p>
+            <div class="price" data-i18n="stu.k1.price">от 3 000 ₽</div>
+            <div class="note" data-i18n="stu.k1.note">срок от 1 дня</div>
+            <button class="btn btn--outline" style="width:100%" onclick="openModal()" data-i18n="stu.k1.btn">Узнать стоимость</button>
+        </div>
+        <div class="pkg hot">
+            <div class="pkg-icon" style="background:linear-gradient(135deg,rgba(108,92,231,.15),rgba(108,92,231,.04))">📘</div>
+            <span class="pkg-badge b2" data-i18n="stu.k2.badge">Популярное</span>
+            <h3 data-i18n="stu.k2.t">Курсовые работы</h3>
+            <p class="desc" data-i18n="stu.k2.d">Помощь с курсовыми по любому направлению. Учтём методичку и требования преподавателя</p>
+            <div class="price" data-i18n="stu.k2.price">от 12 000 ₽</div>
+            <div class="note" data-i18n="stu.k2.note">срок от 3 дней</div>
+            <button class="btn btn--blue" style="width:100%" onclick="openModal()" data-i18n="stu.k2.btn">Рассчитать стоимость</button>
+        </div>
+        <div class="pkg">
+            <div class="pkg-icon" style="background:linear-gradient(135deg,rgba(212,168,83,.15),rgba(212,168,83,.04))">🎓</div>
+            <span class="pkg-badge b3" data-i18n="stu.k3.badge">Полный цикл</span>
+            <h3 data-i18n="stu.k3.t">Дипломные и ВКР</h3>
+            <p class="desc" data-i18n="stu.k3.d">Полное сопровождение — от выбора темы до подготовки к защите. Презентация и речь в подарок</p>
+            <div class="price" data-i18n="stu.k3.price">от 35 000 ₽</div>
+            <div class="note" data-i18n="stu.k3.note">срок от 7 дней</div>
+            <button class="btn btn--outline" style="width:100%" onclick="openModal()" data-i18n="stu.k3.btn">Обсудить проект</button>
+        </div>
+        <div class="pkg">
+            <div class="pkg-icon" style="background:linear-gradient(135deg,rgba(108,92,231,.15),rgba(108,92,231,.04))">🔬</div>
+            <span class="pkg-badge b2" data-i18n="stu.k4.badge">Для магистров</span>
+            <h3 data-i18n="stu.k4.t">Магистерские диссертации</h3>
+            <p class="desc" data-i18n="stu.k4.d">Глубокая проработка для магистрантов. Актуальные источники, научная новизна, полное оформление</p>
+            <div class="price" data-i18n="stu.k4.price">от 50 000 ₽</div>
+            <div class="note" data-i18n="stu.k4.note">срок от 14 дней</div>
+            <button class="btn btn--outline" style="width:100%" onclick="openModal()" data-i18n="stu.k4.btn">Получить консультацию</button>
+        </div>
+        <div class="pkg">
+            <div class="pkg-icon">📄</div>
+            <span class="pkg-badge b1" data-i18n="stu.k5.badge">Наука</span>
+            <h3 data-i18n="stu.k5.t">Научные статьи</h3>
+            <p class="desc" data-i18n="stu.k5.d">Помощь с подготовкой статей для ВАК и РИНЦ. Подбор журнала, оформление по требованиям</p>
+            <div class="price" data-i18n="stu.k5.price">от 15 000 ₽</div>
+            <div class="note" data-i18n="stu.k5.note">срок от 5 дней</div>
+            <button class="btn btn--outline" style="width:100%" onclick="openModal()" data-i18n="stu.k5.btn">Запросить оценку</button>
+        </div>
+        <div class="pkg">
+            <div class="pkg-icon" style="background:linear-gradient(135deg,rgba(74,222,128,.15),rgba(74,222,128,.04))">✨</div>
+            <span class="pkg-badge" style="background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.2)" data-i18n="stu.k6.badge">Новое</span>
+            <h3 data-i18n="stu.k6.t">Повышение оригинальности</h3>
+            <p class="desc" data-i18n="stu.k6.d">Уже написали работу, но антиплагиат не пропускает? Поможем повысить оригинальность без потери смысла</p>
+            <div class="price" data-i18n="stu.k6.price">от 5 000 ₽</div>
+            <div class="note" data-i18n="stu.k6.note">срок от 1 дня</div>
+            <button class="btn btn--outline" style="width:100%" onclick="openModal()" data-i18n="stu.k6.btn">Отправить работу на оценку</button>
+        </div>
+    </div>
+
+    <div class="incl" data-aos="fade-up" data-aos-delay="100">
+        <h4 data-i18n-html="stu.incl.t">🛡️ Включено в каждый проект</h4>
+        <div class="incl-grid">
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i1">Консультация по теме и структуре</span></div>
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i2">Подбор актуальных источников 2025–2026</span></div>
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i3">Оформление по ГОСТу и требованиям вашего вуза</span></div>
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i4">Проверка оригинальности (Антиплагиат)</span></div>
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i5">Отчёт о проверке</span></div>
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i6">Правки по замечаниям преподавателя</span></div>
+            <div class="incl-item"><span class="ck">✓</span> <span data-i18n="stu.incl.i7">Сопровождение до защиты</span></div>
+        </div>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

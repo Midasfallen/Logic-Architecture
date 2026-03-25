@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Публикации — Logic Architecture</title>
+    <meta name="description" content="Статьи, исследования и примеры работ Logic Architecture">
+    <meta property="og:title" content="Публикации — Logic Architecture">
+    <meta property="og:description" content="Статьи, исследования и примеры работ Logic Architecture">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/publications">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/publications">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="pub.sh.l">Публикации</div>
+        <h2 data-i18n="pub.sh.t">Статьи и исследования</h2>
+        <p data-i18n="pub.sh.d">Научные работы, исследования и примеры выполненных проектов</p>
+    </div>
+
+    <div class="pub-filters" data-aos="fade-up">
+        <button class="pub-filter active" data-category="all" data-i18n="pub.filter.all">Все</button>
+        <button class="pub-filter" data-category="article" data-i18n="pub.filter.articles">Статьи</button>
+        <button class="pub-filter" data-category="coursework" data-i18n="pub.filter.coursework">Курсовые</button>
+        <button class="pub-filter" data-category="research" data-i18n="pub.filter.research">Исследования</button>
+    </div>
+
+    <div class="pub-grid" id="pub-grid" data-aos="fade-up" data-aos-delay="100">
+        <!-- Cards loaded from publications.json by JS -->
+    </div>
+
+    <script>
+    (function(){
+        var grid=document.getElementById('pub-grid');
+        var filters=document.querySelectorAll('.pub-filter');
+        var currentCat='all';
+
+        filters.forEach(function(btn){
+            btn.addEventListener('click',function(){
+                filters.forEach(function(b){b.classList.remove('active')});
+                btn.classList.add('active');
+                currentCat=btn.dataset.category;
+                renderCards();
+            });
+        });
+
+        var pubs=[];
+        fetch('/publications/publications.json')
+            .then(function(r){return r.json()})
+            .then(function(data){
+                pubs=data.sort(function(a,b){return b.date.localeCompare(a.date)});
+                renderCards();
+            })
+            .catch(function(){
+                grid.innerHTML='<p style="color:var(--t3);text-align:center;grid-column:1/-1">Публикации загружаются...</p>';
+            });
+
+        function renderCards(){
+            var filtered=currentCat==='all'?pubs:pubs.filter(function(p){return p.category===currentCat});
+            if(!filtered.length){
+                grid.innerHTML='<p style="color:var(--t3);text-align:center;grid-column:1/-1">Нет публикаций в этой категории</p>';
+                return;
+            }
+            grid.innerHTML=filtered.map(function(pub){
+                var catClass='cat-'+pub.category;
+                var d=new Date(pub.date);
+                var dateStr=d.toLocaleDateString('ru-RU',{year:'numeric',month:'long',day:'numeric'});
+                return '<a href="/publications/'+pub.slug+'" class="pub-card">'+
+                    '<span class="pub-badge '+catClass+'">'+pub.category+'</span>'+
+                    '<h3>'+pub.title+'</h3>'+
+                    '<p class="pub-desc">'+pub.description+'</p>'+
+                    '<time datetime="'+pub.date+'">'+dateStr+'</time>'+
+                '</a>';
+            }).join('');
+        }
+    })();
+    </script>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

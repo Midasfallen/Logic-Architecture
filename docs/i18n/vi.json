@@ -284,5 +284,16 @@
   "toast.sending": "Đang gửi...",
   "toast.success": "Yêu cầu đã gửi! Chúng tôi sẽ liên hệ với bạn qua kênh bảo mật",
   "toast.error": "Gửi thất bại. Vui lòng nhắn trực tiếp cho chúng tôi qua Telegram",
-  "typed.strings": ["sản phẩm số", "chiến lược marketing", "dịch vụ web", "ứng dụng di động", "tài liệu kỹ thuật"]
+  "typed.strings": ["sản phẩm số", "chiến lược marketing", "dịch vụ web", "ứng dụng di động", "tài liệu kỹ thuật"],
+  "nav.publications": "Bài đăng",
+  "pub.sh.l": "Bài đăng",
+  "pub.sh.t": "Bài viết & Nghiên cứu",
+  "pub.sh.d": "Bài nghiên cứu khoa học, nghiên cứu và ví dụ về các dự án đã hoàn thành",
+  "pub.filter.all": "Tất cả",
+  "pub.filter.articles": "Bài viết",
+  "pub.filter.coursework": "Luận văn",
+  "pub.filter.research": "Nghiên cứu",
+  "404.title": "Không tìm thấy trang",
+  "404.text": "Trang yêu cầu không tồn tại hoặc đã được di chuyển. Quay lại trang chủ để tiếp tục.",
+  "404.btn": "Về trang chủ"
 }
