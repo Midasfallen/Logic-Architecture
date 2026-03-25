@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Услуги — Logic Architecture</title>
+    <meta name="description" content="Маркетинговые исследования, стратегия, реклама, веб- и мобильная разработка, проектная и техническая документация">
+    <meta property="og:title" content="Услуги — Logic Architecture">
+    <meta property="og:description" content="Маркетинговые исследования, стратегия, реклама, веб- и мобильная разработка, проектная и техническая документация">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/services">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/services">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="svc.sh.l">Услуги</div>
+        <h2 data-i18n="svc.sh.t">Комплексные решения для бизнеса</h2>
+        <p data-i18n="svc.sh.d">Консалтинг, разработка, документация — полный цикл от идеи до результата</p>
+    </div>
+
+    <div class="svc-list" data-aos="fade-up">
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">📊</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Research</div>
+                    <h3 data-i18n="svc.r.t">Маркетинговые исследования</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.r.d">Глубокий анализ рынка, конкурентов и целевой аудитории с применением AI-инструментов для обработки больших массивов данных.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.r.i1">Анализ рынка и конкурентной среды</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.r.i2">Исследование целевой аудитории и сегментация</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.r.i3">Анализ потребительского поведения</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.r.i4">SWOT, PESTEL, Porter's Five Forces</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.r.i5">Отчёт с рекомендациями и данными</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.r.btn">Обсудить исследование</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">🎯</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Strategy</div>
+                    <h3 data-i18n="svc.s.t">Маркетинговая стратегия</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.s.d">Разработка маркетинговой стратегии с воронкой продаж, контент-планом и финансовыми прогнозами.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.s.i1">Позиционирование и УТП</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.s.i2">Маркетинговая воронка (AIDA)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.s.i3">Контент-стратегия и SMM-план</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.s.i4">Медиаплан и бюджетирование</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.s.i5">KPI и система метрик</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.s.btn">Заказать стратегию</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">📢</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Advertising</div>
+                    <h3 data-i18n="svc.a.t">Реклама</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.a.d">Настройка и ведение рекламных кампаний в Яндекс Директ, таргетированная реклама в социальных сетях, медийная реклама.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.a.i1">Контекстная реклама (Яндекс Директ)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.a.i2">Таргетированная реклама (VK, Telegram)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.a.i3">Создание рекламных креативов</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.a.i4">A/B тестирование и оптимизация</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.a.i5">Аналитика и отчётность</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.a.btn">Обсудить рекламу</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">🌐</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Web Development</div>
+                    <h3 data-i18n="svc.w.t">Разработка сайтов и веб-сервисов</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.w.d">Проектирование и разработка веб-приложений от лендингов до enterprise SaaS-платформ. Современный стек, адаптивный дизайн, высокая производительность.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.w.i1">Лендинги и корпоративные сайты</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.w.i2">SPA / PWA веб-приложения</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.w.i3">SaaS-платформы и личные кабинеты</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.w.i4">API-интеграции и микросервисы</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.w.i5">SEO-оптимизация и аналитика</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.w.btn">Обсудить разработку</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">📱</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Mobile Development</div>
+                    <h3 data-i18n="svc.m.t">Разработка мобильных приложений</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.m.d">Кроссплатформенная и нативная разработка мобильных приложений для iOS и Android.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.m.i1">React Native / Flutter</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.m.i2">Нативная разработка (Swift, Kotlin)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.m.i3">UI/UX дизайн мобильных интерфейсов</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.m.i4">Публикация в App Store и Google Play</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.m.i5">Поддержка и обновления</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.m.btn">Обсудить приложение</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">📋</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Project Docs</div>
+                    <h3 data-i18n="svc.pd.t">Проектная документация</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.pd.d">Фундамент любого проекта. От концепции и границ до детализированных требований и пользовательских сценариев.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.pd.i1">Vision & Scope</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.pd.i2">BRD (Business Requirements)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.pd.i3">ТЭО (Технико-экономическое обоснование)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.pd.i4">SRS (Software Requirements)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.pd.i5">Use Cases / User Stories</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.pd.btn">Обсудить документацию</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item">
+            <div class="svc-head" onclick="toggleAccordion(this)">
+                <div class="svc-head-icon">⚙️</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag">Technical Docs</div>
+                    <h3 data-i18n="svc.td.t">Техническая документация</h3>
+                </div>
+                <span class="svc-arrow">▼</span>
+            </div>
+            <div class="svc-body"><div class="svc-body-inner">
+                <p data-i18n="svc.td.d">Архитектура, API, базы данных, планы работ. Всё, что нужно команде разработки для эффективной работы.</p>
+                <ul>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.td.i1">SAD (Software Architecture Document)</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.td.i2">API Documentation</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.td.i3">ER-диаграммы и модели данных</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.td.i4">WBS / Roadmap</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.td.i5">QA: Test Plan, Test Cases, Bug Reports</span></li>
+                    <li><span class="ck">✓</span> <span data-i18n="svc.td.i6">User Manual / Admin Guide / FAQ</span></li>
+                </ul>
+                <button class="btn btn--outline" onclick="openModal()" data-i18n="svc.td.btn">Обсудить документацию</button>
+            </div></div>
+        </div>
+
+        <div class="svc-item" style="border-color:rgba(74,222,128,.2);background:rgba(74,222,128,.02)">
+            <a href="/students" class="svc-head" style="cursor:pointer;text-decoration:none;color:inherit">
+                <div class="svc-head-icon" style="background:linear-gradient(135deg,rgba(74,222,128,.15),rgba(74,222,128,.04))">🎓</div>
+                <div class="svc-head-text">
+                    <div class="svc-tag" style="color:var(--green)">Education</div>
+                    <h3 data-i18n="svc.edu.t">Услуги для студентов</h3>
+                </div>
+                <span class="svc-arrow" style="transform:rotate(-90deg)">▼</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="biz-why" data-aos="fade-up" data-aos-delay="100" style="margin-top:48px">
+        <div class="biz-why-content">
+            <h3 data-i18n="svc.why.t">Почему Logic Architecture</h3>
+            <p data-i18n="svc.why.d">Мы не просто выполняем задачи — мы проектируем решения как систему, где каждый элемент связан с остальными и решает конкретную бизнес-задачу.</p>
+            <ul class="biz-why-list">
+                <li><span class="ck">✓</span> <span data-i18n="svc.why.i1">Опыт в крупнейших банках — стандарты качества финтех-корпораций</span></li>
+                <li><span class="ck">✓</span> <span data-i18n="svc.why.i2">Собственный AI-стек — скорость без потери глубины</span></li>
+                <li><span class="ck">✓</span> <span data-i18n="svc.why.i3">Соответствие ГОСТ и международным стандартам</span></li>
+                <li><span class="ck">✓</span> <span data-i18n="svc.why.i4">Конфиденциальность на уровне банковских систем</span></li>
+                <li><span class="ck">✓</span> <span data-i18n="svc.why.i5">Полный цикл — от идеи до финального результата</span></li>
+            </ul>
+        </div>
+        <div class="biz-why-visual">
+            <span class="biz-why-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bwGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4a853"/><stop offset="100%" stop-color="#4f7df5"/></linearGradient></defs><circle cx="12" cy="5" r="2" stroke="url(#bwGrad)" stroke-width="1.5" fill="none"/><path d="M6.13 21.8l1.72-7.22M16.15 21.8l-1.72-7.22M8.59 11.41l2.34 2.34M12 14l3.41-3.41" stroke="url(#bwGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 7v7" stroke="url(#bwGrad)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+    </div>
+
+    <div class="biz-cta">
+        <button class="btn btn--gold" onclick="openModal()" style="padding:14px 40px;font-size:16px" data-i18n="svc.cta">Обсудить проект</button>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

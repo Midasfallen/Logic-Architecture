@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Разработчикам — Logic Architecture</title>
+    <meta name="description" content="Проприетарный технологический стек: LLM, RAG, NestJS, PostgreSQL, Meilisearch, MinIO">
+    <meta property="og:title" content="Разработчикам — Logic Architecture">
+    <meta property="og:description" content="Проприетарный технологический стек: LLM, RAG, NestJS, PostgreSQL, Meilisearch, MinIO">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/tech">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/tech">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="tech.sh.l">Разработчикам</div>
+        <h2 data-i18n="tech.sh.t">Проприетарный технологический стек</h2>
+        <p data-i18n="tech.sh.d">Собственная разработка, объединяющая лучшие инструменты в единую экосистему</p>
+    </div>
+
+    <div class="tech-grid" data-aos="fade-up">
+        <div class="tcard">
+            <div class="tcard-icon">🧠</div>
+            <div class="tcard-tag">AI Engine</div>
+            <h3 data-i18n="tech.c1.t">Large Language Models</h3>
+            <p data-i18n="tech.c1.d">Передовые open-source модели для рутинных задач. Самые мощные коммерческие модели для стратегического планирования, глубокого анализа и научного синтеза</p>
+        </div>
+        <div class="tcard">
+            <div class="tcard-icon">📚</div>
+            <div class="tcard-tag">Knowledge Base</div>
+            <h3 data-i18n="tech.c2.t">RAG + Obsidian</h3>
+            <p data-i18n="tech.c2.d">Retrieval-Augmented Generation на собственной базе знаний. Obsidian как граф-хранилище с перелинковкой тысяч научных источников и методик</p>
+        </div>
+        <div class="tcard">
+            <div class="tcard-icon">🔍</div>
+            <div class="tcard-tag">Search Layer</div>
+            <h3 data-i18n="tech.c3.t">AnythingLLM + Embeddings</h3>
+            <p data-i18n="tech.c3.d">Семантический поиск по корпусу документов через векторные эмбеддинги. Мгновенное нахождение релевантных источников из миллионов фрагментов</p>
+        </div>
+        <div class="tcard">
+            <div class="tcard-icon">⚡</div>
+            <div class="tcard-tag">Backend</div>
+            <h3 data-i18n="tech.c4.t">NestJS + PostgreSQL</h3>
+            <p data-i18n="tech.c4.d">Enterprise-grade backend на NestJS с TypeScript. PostgreSQL для реляционных данных, Vector DB для семантических запросов, Redis 7 для кэширования</p>
+        </div>
+        <div class="tcard">
+            <div class="tcard-icon">🔎</div>
+            <div class="tcard-tag">Infrastructure</div>
+            <h3 data-i18n="tech.c5.t">Meilisearch + MinIO</h3>
+            <p data-i18n="tech.c5.d">Молниеносный полнотекстовый поиск через Meilisearch. S3-совместимое объектное хранилище MinIO для безопасного хранения документов</p>
+        </div>
+        <div class="tcard">
+            <div class="tcard-icon">💬</div>
+            <div class="tcard-tag">Communications</div>
+            <h3 data-i18n="tech.c6.t">P2P Encrypted Messaging</h3>
+            <p data-i18n="tech.c6.d">Общение между специалистами по peer-to-peer протоколу со сквозным шифрованием. Без серверов-посредников. Ваши данные не покидают защищённый контур</p>
+        </div>
+    </div>
+
+    <div class="tech-arch" data-aos="fade-up" data-aos-delay="100">
+        <div class="tech-arch-content">
+            <h3 data-i18n="tech.arch.t">Единая экосистема собственной разработки</h3>
+            <p data-i18n="tech.arch.d">Мы не используем готовые платформы. Наша команда спроектировала и построила систему с нуля, объединив лучший технологический стек 2026 года в единый программный комплекс. Каждый компонент подобран и интегрирован для максимальной производительности и безопасности.</p>
+            <div class="stack-bar">
+                <span class="stack-tag">NestJS</span>
+                <span class="stack-tag">PostgreSQL</span>
+                <span class="stack-tag">Vector DB</span>
+                <span class="stack-tag">Redis 7</span>
+                <span class="stack-tag">Meilisearch</span>
+                <span class="stack-tag">MinIO</span>
+                <span class="stack-tag">RAG Pipeline</span>
+                <span class="stack-tag">Obsidian Vault</span>
+                <span class="stack-tag">AnythingLLM</span>
+                <span class="stack-tag">Embeddings</span>
+            </div>
+        </div>
+        <div class="tech-visual">
+            <span class="tech-visual-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="tvGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f7df5"/><stop offset="100%" stop-color="#6c5ce7"/></linearGradient></defs><rect x="4" y="4" width="16" height="16" rx="2" stroke="url(#tvGrad)" stroke-width="1.5" fill="none"/><rect x="9" y="9" width="6" height="6" rx="1" stroke="url(#tvGrad)" stroke-width="1.5" fill="none"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" stroke="url(#tvGrad)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </div>
+    </div>
+
+    <div class="sec-block" data-aos="fade-up" data-aos-delay="200">
+        <h3 data-i18n-html="tech.sec.t">🔐 Безопасность на уровне финтех-корпораций</h3>
+        <p data-i18n="tech.sec.d">Инфраструктура построена по стандартам банковской безопасности. Весь трафик проходит через зашифрованные VPN-туннели. Коммуникации между узлами защищены протоколами корпоративного уровня, обеспечивающими максимальную защиту данных.</p>
+        <div class="sec-tags">
+            <span class="sec-tag">WireGuard VPN</span>
+            <span class="sec-tag">VLESS + Reality</span>
+            <span class="sec-tag">End-to-End Encryption</span>
+            <span class="sec-tag">Zero-Knowledge Architecture</span>
+            <span class="sec-tag">P2P Mesh Network</span>
+        </div>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

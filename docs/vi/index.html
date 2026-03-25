@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Logic Architecture — Консалтинг, разработка, документация</title>
+    <meta name="description" content="Консалтинговая и девелоперская компания. Маркетинговые исследования, разработка сайтов и приложений, техническая документация. Собственный AI-стек.">
+    <meta property="og:title" content="Logic Architecture — Консалтинг и разработка">
+    <meta property="og:description" content="Маркетинг, разработка, документация. Технологический подход с собственным AI-стеком и опытом enterprise-проектов.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="badge"><span class="badge-dot"></span> <span data-i18n="hero.badge">Консалтинг · Разработка · Документация</span></div>
+    <h1 data-i18n-html="hero.title">Проектируем и строим<br><span class="grad"><span id="typed-target"></span></span></h1>
+    <p class="sub" data-i18n="hero.sub">Консалтинговая и девелоперская компания с собственным AI-стеком и опытом в банковском секторе. Маркетинговые исследования, разработка продуктов, техническая документация — от идеи до реализации.</p>
+    <div class="hero-btns">
+        <button class="btn btn--gold" onclick="openModal()" data-i18n="hero.btn1">Обсудить проект</button>
+        <a href="/services" class="btn btn--outline" data-i18n="hero.btn2">Наши услуги</a>
+    </div>
+    <div class="metrics">
+        <div class="metric">
+            <div class="metric-val"><span class="a" data-count="10">0</span>+</div>
+            <div class="metric-lbl" data-i18n="hero.m1">лет в enterprise</div>
+        </div>
+        <div class="metric">
+            <div class="metric-val"><span class="a" data-count="50">0</span>+</div>
+            <div class="metric-lbl" data-i18n="hero.m2">реализованных проектов</div>
+        </div>
+        <div class="metric">
+            <div class="metric-val">AI</div>
+            <div class="metric-lbl" data-i18n="hero.m3">собственный стек</div>
+        </div>
+    </div>
+</section>
+
+<main class="main">
+    <div class="sh">
+        <div class="label" data-i18n="home.sh.l">Почему мы</div>
+        <h2 data-i18n-html="home.sh.t">Технологический подход<br>к бизнес-задачам</h2>
+        <p data-i18n="home.sh.d">Объединяем экспертизу enterprise-архитектуры с современным AI-стеком</p>
+    </div>
+
+    <div class="features" data-aos="fade-up">
+        <div class="feat">
+            <div class="feat-icon">🧠</div>
+            <h3 data-i18n="home.f1.t">Собственный AI-стек</h3>
+            <p data-i18n="home.f1.d">Проприетарные инструменты на базе LLM, RAG и векторных баз данных для ускорения исследований и анализа</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🏦</div>
+            <h3 data-i18n="home.f2.t">Enterprise-опыт</h3>
+            <p data-i18n="home.f2.d">Опыт проектирования систем в крупнейших финансовых институтах с миллионами пользователей</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🔄</div>
+            <h3 data-i18n="home.f3.t">Полный цикл</h3>
+            <p data-i18n="home.f3.d">От маркетингового исследования и стратегии до разработки продукта и запуска в эксплуатацию</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">🔒</div>
+            <h3 data-i18n="home.f4.t">Безопасность</h3>
+            <p data-i18n="home.f4.d">Инфраструктура уровня финтех-корпораций. Шифрование, VPN-туннели, Zero-Knowledge Architecture</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">📋</div>
+            <h3 data-i18n="home.f5.t">Документация по стандартам</h3>
+            <p data-i18n="home.f5.d">Проектная и техническая документация по ГОСТ и международным стандартам IEEE, ISO</p>
+        </div>
+        <div class="feat">
+            <div class="feat-icon">⚡</div>
+            <h3 data-i18n="home.f6.t">Гибкость и скорость</h3>
+            <p data-i18n="home.f6.d">Компактная команда с автоматизированными процессами. Быстрее агентства, глубже фриланса</p>
+        </div>
+    </div>
+
+    <div class="mobile-services-link">
+        <a href="/services" data-i18n="home.link">Перейти к услугам →</a>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

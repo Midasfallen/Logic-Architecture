@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Присоединиться — Logic Architecture</title>
+    <meta name="description" content="Стань частью глобальной сети учёных и разработчиков">
+    <meta property="og:title" content="Присоединиться — Logic Architecture">
+    <meta property="og:description" content="Стань частью глобальной сети учёных и разработчиков">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/join">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/join">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="join.sh.l">Присоединиться</div>
+        <h2 data-i18n="join.sh.t">Стань частью глобальной сети</h2>
+        <p data-i18n="join.sh.d">Мы привлекаем учёных и разработчиков из разных сфер для совместного продвижения науки и технологий</p>
+    </div>
+
+    <div class="join-hero" data-aos="fade-up">
+        <h3 data-i18n="join.hero.t">Децентрализованное сообщество без границ</h3>
+        <p data-i18n="join.hero.d">Logic Architecture объединяет людей из разных стран и дисциплин. У нас нет формальных барьеров: не важно, вы PhD-исследователь, junior-разработчик или студент с горящими глазами. Если наши цели вам близки — вы уже один из нас.</p>
+    </div>
+
+    <div class="join-roles" data-aos="fade-up" data-aos-delay="100">
+        <div class="join-role">
+            <div class="join-role-icon">🔬</div>
+            <h4 data-i18n="join.r1.t">Учёные и исследователи</h4>
+            <p data-i18n="join.r1.d">Специалисты в любой научной области: от гуманитарных до технических дисциплин. Помощь в методологии, рецензировании и научном синтезе</p>
+        </div>
+        <div class="join-role">
+            <div class="join-role-icon">💻</div>
+            <h4 data-i18n="join.r2.t">Разработчики</h4>
+            <p data-i18n="join.r2.d">Backend, Frontend, AI/ML, DevOps — любой стек и уровень. Работа над реальными продуктами с передовым технологическим стеком</p>
+        </div>
+        <div class="join-role">
+            <div class="join-role-icon">🌱</div>
+            <h4 data-i18n="join.r3.t">Энтузиасты</h4>
+            <p data-i18n="join.r3.d">Не обязательно быть экспертом. Если вам близки идеи открытой науки и доступных технологий — найдётся задача по силам и интересам</p>
+        </div>
+    </div>
+
+    <div class="join-values" data-aos="fade-up" data-aos-delay="200">
+        <div class="join-value">
+            <div class="join-value-icon">🌍</div>
+            <div>
+                <h5 data-i18n="join.v1.t">Работа из любой точки мира</h5>
+                <p data-i18n="join.v1.d">Полностью распределённая структура. Часовые пояса и география не имеют значения</p>
+            </div>
+        </div>
+        <div class="join-value">
+            <div class="join-value-icon">🔒</div>
+            <div>
+                <h5 data-i18n="join.v2.t">Полная анонимность</h5>
+                <p data-i18n="join.v2.d">Сквозное шифрование, никаких реальных имён. Ваша безопасность гарантирована</p>
+            </div>
+        </div>
+        <div class="join-value">
+            <div class="join-value-icon">📈</div>
+            <div>
+                <h5 data-i18n="join.v3.t">Профессиональный рост</h5>
+                <p data-i18n="join.v3.d">Работа с передовыми технологиями и общение с международными специалистами</p>
+            </div>
+        </div>
+        <div class="join-value">
+            <div class="join-value-icon">🤝</div>
+            <div>
+                <h5 data-i18n="join.v4.t">Горизонтальная структура</h5>
+                <p data-i18n="join.v4.d">Нет начальников и подчинённых — только коллеги с общими целями и взаимным уважением</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="join-form-wrap" data-aos="fade-up" data-aos-delay="100">
+        <h3 data-i18n="join.form.t">Расскажите о себе</h3>
+        <p class="jfdesc" data-i18n="join.form.d">Заполните форму — мы свяжемся с вами через защищённый канал</p>
+        <div class="fg"><label data-i18n="join.form.l0">Имя</label><input type="text" class="fi" name="name" id="join-name" data-i18n-ph="join.form.ph0" placeholder="Как к вам обращаться..."></div>
+        <div class="fg"><label data-i18n="join.form.l1">О себе</label><textarea class="fi" name="about" id="join-about" data-i18n-ph="join.form.ph1" placeholder="Кто вы, чем занимаетесь, что вас мотивирует..." style="min-height:100px"></textarea></div>
+        <div class="fg"><label data-i18n="join.form.l2">Опыт и стек</label><textarea class="fi" name="experience" id="join-experience" data-i18n-ph="join.form.ph2" placeholder="Ваш профессиональный опыт, технологии, научные области..." style="min-height:100px"></textarea></div>
+        <div class="fg"><label data-i18n="join.form.l3">Хобби и увлечения</label><textarea class="fi" name="hobbies" id="join-hobbies" data-i18n-ph="join.form.ph3" placeholder="Чем увлекаетесь помимо работы? Это помогает нам лучше понять вас как личность..." style="min-height:80px"></textarea></div>
+        <div class="fg"><label data-i18n="join.form.l4">Контакты для связи</label><input type="text" class="fi" name="contact" id="join-contact" data-i18n-ph="join.form.ph4" placeholder="Telegram, email или любой удобный мессенджер..."></div>
+        <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><input type="text" name="website" id="join-hp" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn--green" style="width:100%;padding:14px;font-size:15px;margin-top:12px" onclick="submitJoin()" data-i18n="join.form.btn">Присоединиться</button>
+        <p class="modal-alt" data-i18n-html="join.form.alt">или напишите напрямую: <a href="https://t.me/LogicArchitecture" target="_blank" rel="noopener">@LogicArchitecture</a></p>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

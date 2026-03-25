@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>О нас — Logic Architecture</title>
+    <meta name="description" content="Основатель и организация. От банковской карьеры к глобальному сообществу учёных и разработчиков">
+    <meta property="og:title" content="О нас — Logic Architecture">
+    <meta property="og:description" content="Основатель и организация. От банковской карьеры к глобальному сообществу учёных и разработчиков">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/about">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/about">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="abt.sh.l">О нас</div>
+        <h2 data-i18n="abt.sh.t">Основатель и организация</h2>
+        <p data-i18n="abt.sh.d">От банковской карьеры к глобальному децентрализованному сообществу учёных и разработчиков</p>
+    </div>
+
+    <div class="about-main" data-aos="fade-up">
+        <div class="about-photo"><img src="/founder.jpg" alt="Основатель Logic Architecture" width="220" height="220" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block"></div>
+        <div class="about-info">
+            <h3 data-i18n="abt.name">Founder & Architect</h3>
+            <div class="about-role" data-i18n="abt.role">Ex-Head of Systems Analysis · Крупнейшие банки РФ</div>
+            <p class="about-bio" data-i18n="abt.bio">
+                Построил блестящую карьеру в двух крупнейших банках страны, управляя системами, обрабатывающими триллионы. Руководил отделами системного анализа, проектировал архитектуру критически важных финансовых платформ. Но корпоративная бюрократия не давала пространства для настоящих инноваций.
+            </p>
+            <div class="about-markers">
+                <span class="about-marker" data-i18n="abt.m1">Магистр экономики</span>
+                <span class="about-marker" data-i18n="abt.m2">Systems Architect</span>
+                <span class="about-marker" data-i18n="abt.m3">AI Engineering</span>
+                <span class="about-marker" data-i18n="abt.m4">Open Source</span>
+                <span class="about-marker" data-i18n="abt.m5">Hugging Face</span>
+                <span class="about-marker" data-i18n="abt.m6">GitHub</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-timeline" data-aos="fade-up" data-aos-delay="100">
+        <div class="tl-item">
+            <div class="tl-dot">🏦</div>
+            <div class="tl-content">
+                <h4 data-i18n="abt.tl1.t">Банковская карьера</h4>
+                <p data-i18n="abt.tl1.d">Годы в крупнейших финансовых институтах страны. Руководство системным анализом, проектирование архитектуры платформ с миллионами пользователей. Опыт, где цена ошибки измеряется миллиардами.</p>
+            </div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-dot">💻</div>
+            <div class="tl-content">
+                <h4 data-i18n="abt.tl2.t">Open Source и исследования</h4>
+                <p data-i18n="abt.tl2.d">Долгое время исследовал и участвовал в open-source проектах на GitHub и Hugging Face. Изучал передовые модели машинного обучения, экспериментировал с RAG-архитектурами и LLM-оркестрацией.</p>
+            </div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-dot">✈️</div>
+            <div class="tl-content">
+                <h4 data-i18n="abt.tl3.t">Путешествия и глобальный опыт</h4>
+                <p data-i18n="abt.tl3.d">Путешествовал по миру с фокусом на Юго-Восточную Азию — современный центр свободных разработчиков и цифровых кочевников. Получил невероятный опыт общения с передовыми международными профессионалами из самых разных стран.</p>
+            </div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-dot">🚀</div>
+            <div class="tl-content">
+                <h4 data-i18n="abt.tl4.t">Основание Logic Architecture</h4>
+                <p data-i18n="abt.tl4.d">Создал собственные проекты, объединив банковский опыт, знание AI и международные связи. Самый большой интерес — помогать людям, избавлять их от лишней боли и проблем, делать их жизнь проще и лучше.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DAO BLOCK -->
+    <div class="dao-block" data-aos="fade-up" data-aos-delay="200">
+        <div class="dao-header">
+            <div class="dao-icon-wrap"><span>🌐</span></div>
+            <div>
+                <h3 data-i18n="abt.dao.t">Глобальное сообщество</h3>
+                <div class="dao-sub" data-i18n="abt.dao.sub">Распределённая по всему миру структура нового типа</div>
+            </div>
+        </div>
+        <p class="dao-desc" data-i18n="abt.dao.d">
+            Сегодня Logic Architecture — это децентрализованная организация, работающая по принципу DAO. Мы объединяем учёных, исследователей и разработчиков из разных стран мира в единую сеть, цель которой — продвижение науки и технологий, делая их по-настоящему доступными для каждого.
+        </p>
+        <div class="dao-grid">
+            <div class="dao-card">
+                <div class="dao-card-icon">🔗</div>
+                <h4 data-i18n="abt.dao.c1t">Распределённая сеть</h4>
+                <p data-i18n="abt.dao.c1">Участники работают из разных точек мира. Нет центрального офиса, нет корпоративной иерархии — только общие цели и горизонтальные связи между профессионалами.</p>
+            </div>
+            <div class="dao-card">
+                <div class="dao-card-icon">🛡️</div>
+                <h4 data-i18n="abt.dao.c2t">Конфиденциальность</h4>
+                <p data-i18n="abt.dao.c2">Максимальная анонимность и безопасность каждого участника. Сквозное шифрование, P2P-коммуникации, никаких реальных данных в открытом доступе.</p>
+            </div>
+            <div class="dao-card">
+                <div class="dao-card-icon">🧬</div>
+                <h4 data-i18n="abt.dao.c3t">Совместная наука</h4>
+                <p data-i18n="abt.dao.c3">Участники помогают текущим проектам в соответствии со своей квалификацией и интересами: от научных исследований до разработки инфраструктуры.</p>
+            </div>
+            <div class="dao-card">
+                <div class="dao-card-icon">🤝</div>
+                <h4 data-i18n="abt.dao.c4t">Открытое сообщество</h4>
+                <p data-i18n="abt.dao.c4">Мы ищем не только сеньоров-разработчиков и докторов наук — мы приглашаем всех, кому близки наши цели и идеи. Важна мотивация, а не формальный статус.</p>
+            </div>
+        </div>
+        <div class="dao-cta">
+            <a class="btn btn--blue" href="/join" data-i18n="abt.dao.btn">Присоединиться к сообществу</a>
+        </div>
+    </div>
+
+    <div class="quote-block" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon">💎</div>
+        <p data-i18n="abt.quote">Я создал Logic Architecture не ради прибыли, а ради идеи: что передовые технологии должны работать на людей, а не против них. Каждый человек заслуживает инструменты, которые раньше были доступны только корпорациям.</p>
+        <div class="sig" data-i18n="abt.sig">— Founder & Architect</div>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

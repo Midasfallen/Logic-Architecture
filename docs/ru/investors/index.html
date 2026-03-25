@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Инвесторам — Logic Architecture</title>
+    <meta name="description" content="Инвестиционные возможности и партнёрство. Проверенная технология, растущий рынок">
+    <meta property="og:title" content="Инвесторам — Logic Architecture">
+    <meta property="og:description" content="Инвестиционные возможности и партнёрство. Проверенная технология, растущий рынок">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logic-architecture.com/investors">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://logic-architecture.com/investors">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<canvas id="neural-bg"></canvas>
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+
+<header class="header" id="header">
+    <a href="/" class="logo">
+        <div class="logo-icon">
+            <img src="/logo.jpg" alt="Logic Architecture" width="32" height="32">
+        </div>
+        <span class="logo-text">LOGIC ARCHITECTURE</span>
+        <span class="logo-text-short">LA</span>
+    </a>
+    <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    <nav class="nav" id="nav">
+        <a href="/" class="nav-tab" data-i18n="nav.home">Главная</a>
+        <a href="/services" class="nav-tab" data-i18n="nav.services">Услуги</a>
+        <a href="/students" class="nav-tab" data-i18n="nav.students">Студентам</a>
+        <a href="/tech" class="nav-tab" data-i18n="nav.tech">Разработчикам</a>
+        <a href="/publications" class="nav-tab" data-i18n="nav.publications">Публикации</a>
+        <a href="/about" class="nav-tab" data-i18n="nav.about">О нас</a>
+        <a href="/join" class="nav-tab" data-i18n="nav.join">Присоединиться</a>
+    </nav>
+    <div class="lang-sw" id="langSw">
+        <button class="lang-btn" onclick="toggleLangMenu()"><span id="langCurrent">RU</span><span class="lang-arrow">▾</span></button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-opt active" data-lang="ru" onclick="setLang('ru')">RU <span class="lang-name">Русский</span></div>
+            <div class="lang-opt" data-lang="en" onclick="setLang('en')">EN <span class="lang-name">English</span></div>
+            <div class="lang-opt" data-lang="vi" onclick="setLang('vi')">VI <span class="lang-name">Tiếng Việt</span></div>
+            <div class="lang-opt" data-lang="zh" onclick="setLang('zh')">ZH <span class="lang-name">中文</span></div>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="btn btn--gold hcta" onclick="openModal()" data-i18n="nav.cta">Связаться с нами</a>
+</header>
+
+<main class="main no-hero">
+    <div class="sh">
+        <div class="label" data-i18n="inv.sh.l">Инвесторам</div>
+        <h2 data-i18n="inv.sh.t">Ищем партнёров для масштабирования</h2>
+        <p data-i18n="inv.sh.d">Проверенная технология, растущий рынок, амбициозные планы</p>
+    </div>
+
+    <div class="inv-hero" data-aos="fade-up">
+        <h3 data-i18n="inv.hero.t">От образовательного консалтинга к международным рынкам</h3>
+        <p data-i18n="inv.hero.d">Logic Architecture — это не просто сервис. Это технологическая платформа с проприетарным AI-стеком, готовая к масштабированию на смежные рынки: техническая документация, подготовка заявок в международные акселераторы, разработка собственных IT-продуктов.</p>
+    </div>
+
+    <div class="inv-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="inv-card">
+            <h4 data-i18n-html="inv.c1.t">🚀 Стратегия роста</h4>
+            <p data-i18n="inv.c1.d">Мы планируем выход на рынок профессиональной документации для участия в международных акселераторах и грантовых программах. Наша технология позволяет готовить документацию уровня, который принимают ведущие фонды.</p>
+        </div>
+        <div class="inv-card">
+            <h4 data-i18n-html="inv.c2.t">💡 Собственные IT-проекты</h4>
+            <p data-i18n="inv.c2.d">Разрабатываем линейку SaaS-продуктов на базе нашего AI-стека: от автоматизации документооборота до интеллектуальных систем для бизнес-аналитики. Каждый продукт — отдельная единица монетизации.</p>
+        </div>
+        <div class="inv-card">
+            <h4 data-i18n-html="inv.c3.t">👥 Расширение команды</h4>
+            <ul>
+                <li data-i18n-html="inv.c3.i1">🧠 AI/ML инженеры для развития RAG-системы</li>
+                <li data-i18n-html="inv.c3.i2">⚡ Backend-разработчики (NestJS, Go)</li>
+                <li data-i18n-html="inv.c3.i3">📊 Продуктовые аналитики и менеджеры</li>
+                <li data-i18n-html="inv.c3.i4">🌍 Международные партнёры и эксперты</li>
+            </ul>
+        </div>
+        <div class="inv-card">
+            <h4 data-i18n-html="inv.c4.t">📈 Куда пойдут инвестиции</h4>
+            <ul>
+                <li data-i18n-html="inv.c4.i1">🏗️ Развитие проприетарной AI-платформы</li>
+                <li data-i18n-html="inv.c4.i2">🌐 Выход на международные рынки (SEA, EU)</li>
+                <li data-i18n-html="inv.c4.i3">📝 Подготовка к международным акселераторам</li>
+                <li data-i18n-html="inv.c4.i4">👥 Наём ключевых специалистов</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="inv-cta">
+        <button class="btn btn--gold" onclick="openModal()" style="padding:14px 40px;font-size:16px">
+            <span data-i18n="inv.cta">Обсудить партнёрство</span>
+        </button>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+<div id="site-modal"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/layout.js"></script>
+</body>
+</html>

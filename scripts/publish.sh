@@ -239,8 +239,11 @@ echo ""
 echo "Публикация создана:"
 echo "  URL:  https://logic-architecture.com/publications/$SLUG"
 echo "  Файл: docs/publications/$SLUG/index.html"
+# Обновить языковые копии
+bash "$SCRIPTDIR/gen-lang-pages.sh"
+
 echo ""
 echo "Следующие шаги:"
-echo "  git add docs/publications/$SLUG docs/publications/publications.json"
+echo "  git add docs/ scripts/"
 echo "  git commit -m \"Новая публикация: $TITLE\""
 echo "  git push"
