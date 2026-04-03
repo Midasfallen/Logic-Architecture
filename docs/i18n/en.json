@@ -294,6 +294,8 @@
   "pub.filter.coursework": "Coursework",
   "pub.filter.research": "Research",
   "pub.filter.series": "Series",
+  "pub.series.title": "Article Series & Research Cycles",
+  "pub.series.desc": "In-depth research broken into a series of connected publications",
   "pub.toc": "Table of Contents",
   "pub.copy.link": "Copy Link",
   "pub.copy.done": "Link copied!",

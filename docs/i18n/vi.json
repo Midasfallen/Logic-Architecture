@@ -294,6 +294,8 @@
   "pub.filter.coursework": "Luận văn",
   "pub.filter.research": "Nghiên cứu",
   "pub.filter.series": "Loạt bài",
+  "pub.series.title": "Loạt bài viết và nghiên cứu",
+  "pub.series.desc": "Nghiên cứu chuyên sâu được chia thành loạt bài liên kết",
   "pub.toc": "Mục lục",
   "pub.copy.link": "Sao chép liên kết",
   "pub.copy.done": "Đã sao chép liên kết!",

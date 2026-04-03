@@ -3,7 +3,8 @@
 import subprocess, os, re, sys
 
 DOCS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
-SERIES_DIR = "/tmp/series"
+import tempfile
+SERIES_DIR = os.path.join(tempfile.gettempdir(), "series")
 
 slugs = [
     'sposobny-li-zhenshchiny-lyubit-01-pochemu',
