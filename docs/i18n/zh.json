@@ -293,6 +293,7 @@
   "pub.filter.articles": "文章",
   "pub.filter.coursework": "课程论文",
   "pub.filter.research": "研究",
+  "pub.filter.series": "系列",
   "pub.toc": "目录",
   "pub.copy.link": "复制链接",
   "pub.copy.done": "链接已复制！",

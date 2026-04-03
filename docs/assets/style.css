@@ -317,6 +317,7 @@ textarea.fi{resize:vertical;min-height:80px}
 .pub-badge.cat-article{background:rgba(212,168,83,.1);color:var(--gold);border-color:rgba(212,168,83,.2)}
 .pub-badge.cat-coursework{background:rgba(108,92,231,.1);color:var(--purple);border-color:rgba(108,92,231,.2)}
 .pub-badge.cat-research{background:rgba(34,211,238,.1);color:var(--cyan);border-color:rgba(34,211,238,.2)}
+.pub-badge.cat-series{background:rgba(74,222,128,.1);color:var(--green);border-color:rgba(74,222,128,.2)}
 .pub-card h3{font-size:17px;font-weight:600;margin-bottom:8px;line-height:1.4}
 .pub-card .pub-desc{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:12px}
 .pub-card time{font-size:12px;color:var(--t3);font-family:'Space Grotesk',sans-serif}
@@ -529,6 +530,14 @@ textarea.fi{resize:vertical;min-height:80px}
 .pub-toc a:hover{color:var(--t1)}
 .pub-toc a.active{color:var(--blue);font-weight:600}
 .pub-layout .pub-content{flex:1;min-width:0}
+
+/* ===== SERIES NAVIGATION ===== */
+.pub-series-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:32px 0;padding:20px 0;border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
+.pub-series-nav a{display:flex;align-items:center;gap:6px;color:var(--blue);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.pub-series-nav a:hover{color:var(--gold)}
+.pub-series-nav .series-label{font-size:12px;color:var(--t3);display:block;margin-bottom:2px}
+.pub-series-nav .series-prev{text-align:left}
+.pub-series-nav .series-next{text-align:right;margin-left:auto}
 
 /* ===== ENGAGEMENT BAR ===== */
 .pub-engage{display:flex;align-items:center;gap:16px;padding:24px 0;margin:40px 0;border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}

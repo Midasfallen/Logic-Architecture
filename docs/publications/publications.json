@@ -6,23 +6,120 @@
     "category": "coursework",
     "lang": "ru",
     "description": "Пример курсовой работы по теме защиты права собственности в российском гражданском праве"
-  }
-
-  ,{
+  },
+  {
     "slug": "plagiat-i-vdokhnovenie-v-muzyke-pravovye-kriterii",
     "title": "Плагиат и вдохновение в музыке: правовые критерии",
     "date": "2026-03-25",
     "category": "coursework",
     "lang": "ru",
     "description": "Курсовая работа о разграничении плагиата и вдохновения в музыке"
-  }
-
-  ,{
+  },
+  {
     "slug": "obektivizatsiya-dokazyvaniya-pri-rassledovanii-prestuplenij",
     "title": "Объективизация доказывания при расследовании преступлений",
     "date": "2026-03-25",
     "category": "article",
     "lang": "ru",
     "description": "Научная статья об объективизации процесса доказывания при расследовании преступлений против несовершеннолетних"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-01-pochemu",
+    "title": "Пост 1: Почему мы вообще об этом говорим",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Введение в серию: почему вопрос об асимметрии привязанности между полами заслуживает научного анализа",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-02-geny",
+    "title": "Пост 2: Что говорят гены",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Генетика привязанности: AVPR1A, OXTR, DRD4 и почему ген любви не существует",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-03-primaty",
+    "title": "Пост 3: Наши ближайшие родственники",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Приматология: от шимпанзе и бонобо до гиббонов — что говорят о любви наши ближайшие родственники",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-04-mozg",
+    "title": "Пост 4: Мозг влюблённого",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Нейровизуализация: fMRI-данные о том, как работает мозг влюблённого мужчины и женщины",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-05-okhotniki-sobirateli",
+    "title": "Пост 5: Что говорят охотники-собиратели и матриархаты",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Антропология: что говорят охотники-собиратели Калахари, матриархат Мосо и 166 культур",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-06-razvody",
+    "title": "Пост 6: Статистика разводов: что она реально показывает",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Статистика разводов с контекстом: что она реально показывает и что скрывает",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-07-mify",
+    "title": "Пост 7: Мифы о любви: мужские и женские",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Мифология любви: мужские и женские архетипы от Орфея до Алкестиды",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-08-isklyucheniya",
+    "title": "Пост 8: Исключения: от Марии Кюри до жён декабристов",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Исторические исключения: от Марии Кюри до жён декабристов",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-09-mashinnyj-raj",
+    "title": "Пост 9: Машинный рай и ведро с крабами",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Что делает с любовью изобилие: машинный рай, парадокс выбора и ведро с крабами",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-10-determinizm",
+    "title": "Пост 10: Детерминизм vs. свобода: можно ли выбрать любовь?",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Детерминизм против свободы: можно ли выбрать любовь или мы заложники эволюции",
+    "series": "Способны ли женщины любить?"
+  },
+  {
+    "slug": "sposobny-li-zhenshchiny-lyubit-11-raspoznat",
+    "title": "Пост 11: Как распознать женщину, способную любить по-настоящему",
+    "date": "2026-04-03",
+    "category": "series",
+    "lang": "ru",
+    "description": "Практическая модель: пять уровней безусловной привязанности",
+    "series": "Способны ли женщины любить?"
   }
 ]
