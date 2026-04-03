@@ -538,7 +538,8 @@ textarea.fi{resize:vertical;min-height:80px}
 .pub-like-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;transition:fill .3s}
 .pub-like-btn.liked svg{fill:var(--red)}
 .pub-copy-btn:hover{border-color:var(--brd-a);color:var(--blue)}
-.pub-copy-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.pub-copy-btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2}
+.pub-copy-btn svg *{fill:none}
 .pub-like-count{font-family:'Space Grotesk',sans-serif;font-weight:600}
 
 /* ===== COMMENTS ===== */
@@ -549,12 +550,12 @@ textarea.fi{resize:vertical;min-height:80px}
 .pub-comment-name{font-size:14px;font-weight:600;color:var(--t1)}
 .pub-comment-date{font-size:12px;color:var(--t3);font-family:'Space Grotesk',sans-serif}
 .pub-comment-body{font-size:14px;color:var(--t2);line-height:1.7;white-space:pre-wrap;word-break:break-word}
-.pub-comment-form{margin-bottom:32px}
+.pub-comment-form{margin-bottom:32px;display:flex;flex-direction:column}
 .pub-comment-form input,.pub-comment-form textarea{width:100%;padding:12px 16px;border-radius:10px;background:var(--bg2);border:1px solid var(--brd);color:var(--t1);font-size:14px;font-family:'Inter',sans-serif;transition:border-color .3s;box-sizing:border-box}
 .pub-comment-form input:focus,.pub-comment-form textarea:focus{outline:none;border-color:var(--brd-a)}
 .pub-comment-form input{margin-bottom:10px}
 .pub-comment-form textarea{min-height:100px;resize:vertical;margin-bottom:12px}
-.pub-comment-form .btn--blue{padding:10px 24px;font-size:14px}
+.pub-comment-form .btn--blue{padding:10px 24px;font-size:14px;align-self:flex-start}
 .pub-comments-empty{text-align:center;padding:32px;color:var(--t3);font-size:14px}
 
 /* ===== RELATED ARTICLES ===== */
