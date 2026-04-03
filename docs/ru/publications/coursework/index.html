@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Публикации — Logic Architecture</title>
-    <meta name="description" content="Статьи, исследования и примеры работ Logic Architecture">
-    <meta property="og:title" content="Публикации — Logic Architecture">
-    <meta property="og:description" content="Статьи, исследования и примеры работ Logic Architecture">
+    <title>Курсовые — Публикации — Logic Architecture</title>
+    <meta name="description" content="Примеры выполненных курсовых работ с полным оформлением">
+    <meta property="og:title" content="Курсовые — Logic Architecture">
+    <meta property="og:description" content="Примеры выполненных курсовых работ с полным оформлением">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://logic-architecture.com/publications">
+    <meta property="og:url" content="https://logic-architecture.com/publications/coursework">
     <meta property="og:locale" content="ru_RU">
-    <link rel="canonical" href="https://logic-architecture.com/publications">
+    <link rel="canonical" href="https://logic-architecture.com/publications/coursework">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f7df5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
@@ -54,21 +54,13 @@
 
 <main class="main no-hero">
     <div class="sh">
-        <div class="label" data-i18n="pub.sh.l">Публикации</div>
-        <h2 data-i18n="pub.sh.t">Статьи и исследования</h2>
-        <p data-i18n="pub.sh.d">Научные работы, исследования и примеры выполненных проектов</p>
-    </div>
-
-    <div class="pub-filters" data-aos="fade-up">
-        <span class="pub-filter active" data-i18n="pub.filter.all">Все</span>
-        <a href="/publications/articles/" class="pub-filter" data-i18n="pub.filter.articles">Статьи</a>
-        <a href="/publications/coursework/" class="pub-filter" data-i18n="pub.filter.coursework">Курсовые</a>
-        <a href="/publications/research/" class="pub-filter" data-i18n="pub.filter.research">Исследования</a>
-        <a href="/publications/series/" class="pub-filter" data-i18n="pub.filter.series">Серии</a>
+        <a href="/publications" class="pub-back" style="margin-bottom:16px;display:inline-block">← Все публикации</a>
+        <div class="label" data-i18n="pub.filter.coursework">Курсовые</div>
+        <h2 data-i18n="pub.coursework.title">Примеры курсовых работ</h2>
+        <p data-i18n="pub.coursework.desc">Примеры выполненных курсовых работ с полным оформлением</p>
     </div>
 
     <div class="pub-grid" id="pub-grid" data-aos="fade-up" data-aos-delay="100">
-        <!-- Cards loaded from publications.json by JS -->
     </div>
 
     <script>
@@ -77,7 +69,11 @@
         fetch('/publications/publications.json')
             .then(function(r){return r.json()})
             .then(function(data){
-                var pubs=data.sort(function(a,b){return b.date.localeCompare(a.date)});
+                var pubs=data.filter(function(p){return p.category==='coursework'}).sort(function(a,b){return b.date.localeCompare(a.date)});
+                if(!pubs.length){
+                    grid.innerHTML='<p style="color:var(--t3);text-align:center;grid-column:1/-1">Нет публикаций в этой категории</p>';
+                    return;
+                }
                 grid.innerHTML=pubs.map(function(pub){
                     var catClass='cat-'+pub.category;
                     var d=new Date(pub.date);
@@ -91,7 +87,7 @@
                 }).join('');
             })
             .catch(function(){
-                grid.innerHTML='<p style="color:var(--t3);text-align:center;grid-column:1/-1">Публикации загружаются...</p>';
+                grid.innerHTML='<p style="color:var(--t3);text-align:center;grid-column:1/-1">Загрузка...</p>';
             });
     })();
     </script>
