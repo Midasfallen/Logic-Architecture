@@ -63,7 +63,9 @@
 </header>
 
 <main class="main no-hero">
-    <article class="pub-content">
+<div class="pub-layout">
+    <aside id="pub-toc" class="pub-toc"></aside>
+    <article class="pub-content" data-slug="plagiat-i-vdokhnovenie-v-muzyke-pravovye-kriterii" data-category="coursework">
         <div class="pub-meta">
             <a href="/publications" class="pub-back">← Публикации</a>
             <time datetime="2026-03-25">2026-03-25</time>
@@ -1253,7 +1255,39 @@ p.</p></li>
 вдохновения в музыкальной сфере: правовые критерии и современные
 тенденции защиты авторских прав”</em></p>
 <p><em>2024</em></p>
+        <!-- Engagement bar -->
+        <div class="pub-engage">
+            <button class="pub-like-btn" aria-label="Like">
+                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="pub-like-count">0</span>
+            </button>
+            <button class="pub-copy-btn" data-i18n="pub.copy.link">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Копировать ссылку
+            </button>
+        </div>
     </article>
+</div>
+
+<!-- Related articles -->
+<section class="pub-related">
+    <h2 class="pub-related-title" data-i18n="pub.related">Читайте также</h2>
+    <div class="pub-related-grid" id="pub-related-grid"></div>
+</section>
+
+<!-- Comments -->
+<section class="pub-comments">
+    <h2 class="pub-comments-title" data-i18n="pub.comments">Комментарии</h2>
+    <form class="pub-comment-form" autocomplete="off">
+        <input type="text" name="name" placeholder="Ваше имя" data-i18n-ph="pub.comments.name" required maxlength="100">
+        <textarea name="body" placeholder="Ваш комментарий" data-i18n-ph="pub.comments.text" required maxlength="2000"></textarea>
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn--blue" data-i18n="pub.comments.send">Отправить</button>
+    </form>
+    <div id="pub-comments-list"></div>
+    <div class="pub-comments-empty" data-i18n="pub.comments.empty">Пока нет комментариев. Будьте первым!</div>
+</section>
+
 </main>
 
 <div id="site-footer"></div>
@@ -1262,5 +1296,6 @@ p.</p></li>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="/assets/shared.js"></script>
 <script src="/assets/layout.js"></script>
+<script src="/assets/publications.js"></script>
 </body>
 </html>

@@ -24,4 +24,9 @@ services:
       - ./server/.env
     expose:
       - "3000"
+    volumes:
+      - api-data:/app/data
     restart: unless-stopped
+
+volumes:
+  api-data:
